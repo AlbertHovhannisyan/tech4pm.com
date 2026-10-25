@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+:root {
+  /* Primary Gradient Colors from Logo */
+  --neon-pink: #FF2E93;
+  --electric-purple: #8B5CF6;
+  --deep-violet: #5B2EFF;
+  
+  /* Background */
+  --dark-navy: #0B0F1A;
+  --secondary-dark: #111827;
+  
+  /* Accent / Highlight */
+  --cyan-glow: #22D3EE;
+  --success-green: #22C55E;
+  
+  /* Text */
+  --text-primary: #E5E7EB;
+  --text-muted: #9CA3AF;
+  
+  /* Legacy (for backward compatibility) */
+  --midnight-navy: #0B0F1A;
+  --neon-blue: #22D3EE;
+  --neon-purple: #8B5CF6;
+  --lime-green: #22C55E;
+  --foreground: #E5E7EB;
+}
+
+@theme inline {
+  --color-neon-pink: var(--neon-pink);
+  --color-electric-purple: var(--electric-purple);
+  --color-deep-violet: var(--deep-violet);
+  --color-dark-navy: var(--dark-navy);
+  --color-secondary-dark: var(--secondary-dark);
+  --color-cyan-glow: var(--cyan-glow);
+  --color-success-green: var(--success-green);
+  --color-text-primary: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+  --color-midnight-navy: var(--midnight-navy);
+  --color-neon-blue: var(--neon-blue);
+  --color-neon-purple: var(--neon-purple);
+  --color-lime-green: var(--lime-green);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+}
+
+body {
+  background: var(--dark-navy);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+}
+
+/* Primary Gradient (Pink → Purple → Violet) */
+.gradient-neon {
+  background: linear-gradient(135deg, var(--neon-pink) 0%, var(--electric-purple) 50%, var(--deep-violet) 100%);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--neon-pink) 0%, var(--electric-purple) 50%, var(--deep-violet) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow Effects */
+.glow-pink {
+  box-shadow: 0 0 20px rgba(255, 46, 147, 0.5);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
+}
+
+/* Neon Border */
+.neon-border {
+  border: 1px solid rgba(255, 46, 147, 0.3);
+  box-shadow: 
+    0 0 10px rgba(255, 46, 147, 0.2),
+    inset 0 0 10px rgba(139, 92, 246, 0.1);
+}
+
+.neon-border:hover {
+  border-color: rgba(255, 46, 147, 0.6);
+  box-shadow: 
+    0 0 20px rgba(255, 46, 147, 0.4),
+    inset 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+/* Animated Gradient Background */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(-45deg, 
+    rgba(255, 46, 147, 0.1), 
+    rgba(139, 92, 246, 0.1), 
+    rgba(91, 46, 255, 0.1), 
+    rgba(34, 211, 238, 0.1)
+  );
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
